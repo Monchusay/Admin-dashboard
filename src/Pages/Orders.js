@@ -40,6 +40,7 @@ const Orders = () => {
             Page,
             ExcelExport,
             PdfExport,
+            Edit,
           ]}
         />
       </GridComponent>
