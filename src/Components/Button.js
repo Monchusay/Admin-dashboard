@@ -7,7 +7,7 @@ const Button = ({color, bgColor, text, borderRadius, size}) => {
             style={{backgroundColor:bgColor, color, borderRadius}}
             className={`text-${size} p-3 hover:drop-shadow-xl`}
         >
-            Download
+            {text}
         </button>
     );
 };
