@@ -24,7 +24,7 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { useStateContext } from "./Contexts/ContextProvider";
 
 const App = () => {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings } = useStateContext();
 
   return (
     <div>
@@ -33,6 +33,7 @@ const App = () => {
           <div className="fixed right-10 bottom-4" style={{ zIndex: "1000" }}>
             <TooltipComponent content="Settings" position="Top">
               <button
+                onClick={() => setThemeSettings(true)}
                 type="button"
                 className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
                 style={{ background: "blue", borderRadius: "50%" }}
@@ -59,6 +60,7 @@ const App = () => {
               <Navbar />
             </div>
             <div>
+              {themeSettings && <ThemeSettings />}
               <Routes>
                 {/*Dashboard*/}
                 <Route path="/" element={<Ecommerce />} />
