@@ -20,7 +20,7 @@ const Area = () => {
   const { currentMode } = useStateContext();
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-      <Header title="Inflation Rate in Percentage" category="Chart" />
+      <Header title="Inflation Rate in Percentage" category="Area" />
       <ChartComponent
         id="area-chart"
         height="420px"
@@ -29,6 +29,7 @@ const Area = () => {
         chartArea={{ border: { width: 0 } }}
         tooltip={{ enable: true }}
         background={currentMode === "Dark" ? "#33373E" : "#fff"}
+        legendSettings={{ visible: true, background: "white" }}
       >
         <Inject services={[Legend, DateTime, SplineAreaSeries]} />
         <SeriesCollectionDirective>
